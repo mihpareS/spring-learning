@@ -8,8 +8,14 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="teacher" class="com.kihcyaz.aynorb.beans.Teacher" scope="prototype" factory-bean="teacherFactory" factory-method="getInstance">
+    <bean id="factoryTeacher" scope="prototype" factory-bean="teacherFactory" factory-method="getInstance">
         <property name="number" value="001"/>
+        <property name="name" value="Bob"/>
+        <property name="age" value="25"/>
+    </bean>
+
+    <bean id="teacher" class="com.kihcyaz.aynorb.beans.Teacher" scope="prototype">
+        <property name="number" value="003"/>
         <property name="name" value="Bob"/>
         <property name="age" value="25"/>
     </bean>
